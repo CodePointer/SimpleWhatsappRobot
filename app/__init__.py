@@ -9,8 +9,8 @@ def create_app():
     app = Flask(__name__)
 
     # Load configurations and logging settings
-    load_configurations(app)
     configure_logging(app)
+    load_configurations(app)
 
     # Import and register the blueprint
     app.register_blueprint(webhook_blueprint)

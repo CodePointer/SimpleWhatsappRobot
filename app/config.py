@@ -10,7 +10,8 @@ def load_configurations(app):
     """
     Load configurations from the environment
     """
-    load_dotenv()
+    if os.getenv('WEBSITE_HOSTNAME') is None:
+        load_dotenv()
     app.config["ACCESS_TOKEN"] = os.getenv("ACCESS_TOKEN")
     app.config["YOUR_PHONE_NUMBER"] = os.getenv("YOUR_PHONE_NUMBER")
     app.config["APP_ID"] = os.getenv("APP_ID")
@@ -19,7 +20,8 @@ def load_configurations(app):
     app.config["VERSION"] = os.getenv("VERSION")
     app.config["PHONE_NUMBER_ID"] = os.getenv("PHONE_NUMBER_ID")
     app.config["VERIFY_TOKEN"] = os.getenv("VERIFY_TOKEN")
-    app.config["GYM_URL"] = os.getenv("GYM_URL")
+    logging.info("Configurations loaded")
+    logging.info(f"Access token: {app.config['ACCESS_TOKEN'][:5]}*****")
 
 
 def configure_logging(app):

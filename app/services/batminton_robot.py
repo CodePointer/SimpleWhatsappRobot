@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 
-from dotenv import load_dotenv
 import os
 import requests
 from bs4 import BeautifulSoup
@@ -8,7 +7,6 @@ import re
 import logging
 
 
-load_dotenv()
 GYM_URL = "https://unisasport.edu.au/citywestcourts"
 
 
