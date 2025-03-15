@@ -1,0 +1,6 @@
+requests
+beautifulsoup4
+matplotlib
+pillow
+flask
+dotenv
