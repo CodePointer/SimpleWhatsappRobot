@@ -86,11 +86,11 @@ def process_whatsapp_message(body):
 
     # response = generate_response(message_body)
 
-    if from_id == current_app.config['RECIPIENT_WAID'] and "@robot" in message_body:
+    if message_body.strip().lower() == "/bat":
         response = generate_response()
         response = process_text_for_whatsapp(response)
 
-        data = get_text_message_input(current_app.config["RECIPIENT_WAID"], response)
+        data = get_text_message_input(from_id, response)
         send_message(data)
     else:
         pass

@@ -75,6 +75,7 @@ class BadmintonRobot:
         report_str = f"\n📅 {self.valid_date_range}\n"
         report_str += self.get_badminton_schedule("Court 1", self.court_1_badminton)
         report_str += self.get_badminton_schedule("Court 2", self.court_2_badminton)
+        report_str += f"\n URL: {GYM_URL}\n"
         # logging.info(f"Report: {report_str}")
         return report_str
 
